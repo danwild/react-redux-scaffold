@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danwild/react-redux-scaffold.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["react", "redux", "webpack", "babel", "ES6"],
+  "author": "mail@danwild.io",
   "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/danwild/react-redux-scaffold/issues"
@@ -29,6 +29,10 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.2",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
