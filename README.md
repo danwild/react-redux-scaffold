@@ -1,20 +1,15 @@
 # react-redux-scaffold
+
 A **WIP** project to learn React+Redux concepts, and setup a project scaffold.
 
 Largely adopted from: https://www.valentinog.com/blog/redux/
 
 ## Install, run
+
 ```javascript
 npm install
 npm start
 ```
-
-## Next
-- Add some example UI components with Material UI.
-  - [Docs](https://material-ui.com/)
-  - [Tutorial](https://medium.freecodecamp.org/meet-your-material-ui-your-new-favorite-user-interface-library-6349a1c88a8c)
-  - [Icons](https://material.io/tools/icons/?style=baseline)
-- Add Routing example
 
 ## File structure:
 
@@ -30,6 +25,12 @@ npm start
   - `index.html` root html entry point
   - `index.js` root js entry point
 
+## Resources
+
+- Material UI
+  - [Docs](https://material-ui.com/)
+  - [Tutorial](https://medium.freecodecamp.org/meet-your-material-ui-your-new-favorite-user-interface-library-6349a1c88a8c)
+  - [Icons](https://material.io/tools/icons/?style=baseline)
 
 ## Oversimplified explanation of concepts
 
@@ -52,13 +53,14 @@ npm start
     - An **action creator** is a function that may contain some logic, which is called by a reducer `/src/js/actions/**.js`
   - `Middleware`
     - A Redux middleware is a function that is able to intercept, and act accordingly, our actions, before they reach the reducer.
-    - Middlewares in Redux are super important because **they will hold the bulk of your application’s logic.** 
-    The nice thing is that while inside the middleware you can access `getState` and `dispatch`
+    - Middlewares in Redux are super important because **they will hold the bulk of your application’s logic.**
+      The nice thing is that while inside the middleware you can access `getState` and `dispatch`
   - `react-thunk`
     - By default, we can’t use action creators for **async** tasks because they are expected to return an object (i.e. not a promise/callback function).
     - [redux-thunk](https://github.com/reduxjs/redux-thunk) middleware is used to solve this problem.
 
 **What is actually happening when I add a post?**
+
 - The `PostForm` component is connected to Redux
   - It maps the `addArticle` action to the Redux `dispatch` API method and binds to the forms `onSubmit` event.
 - When you click the submit button:
@@ -69,4 +71,3 @@ npm start
     - if a forbidden word is detected, adding the article is blocked and a message shown
     - else if valid article
       - the action passed through to the reducer, which returns a new copy of the state which contains the new article paylod (no mutation!)
-

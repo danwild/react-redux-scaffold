@@ -12,6 +12,9 @@ import MessageList from "./MessageList.jsx";
 import PostForm from "./PostForm.jsx";
 import ExternalPostList from "./ExternalPostList.jsx";
 
+// custom styles
+import { DARK_GREY } from "../styles/colors";
+
 const styles = theme => ({
   root: {
     flexGrow: 1
@@ -27,7 +30,8 @@ const styles = theme => ({
   },
   typography: {
     textAlign: "center",
-    padding: theme.spacing.unit * 2
+    padding: theme.spacing.unit * 2,
+    color: DARK_GREY
   },
   icon: {
     fontSize: "60px",
