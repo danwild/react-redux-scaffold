@@ -66,37 +66,6 @@ class ConnectedList extends Component {
   }
 }
 
-// const ConnectedList = ({ articles }) => (
-
-//   <Grid item xs={12} md={6}>
-//     <Typography variant="h6">
-//       My posts
-//     </Typography>
-//     <div>
-//       <List>
-//         {articles.map(el => (
-//           <ListItem key={el.id}>
-//             <ListItemAvatar>
-//               <Avatar>
-//                 <LibraryBooks />
-//               </Avatar>
-//             </ListItemAvatar>
-//             <ListItemText
-//               primary={el.title}
-//             />
-//             <ListItemSecondaryAction>
-//               <IconButton aria-label="Delete">
-//                 <DeleteIcon onClick={handleSubmit} />
-//                 {/* <DeleteIcon /> */}
-//               </IconButton>
-//             </ListItemSecondaryAction>
-//           </ListItem>
-//         ))}
-//       </List>
-//     </div>
-//   </Grid>
-
-// );
 const PostList = connect(
   mapStateToProps,
   mapDispatchToProps

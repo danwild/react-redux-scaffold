@@ -1,7 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import CenteredGrid from "./CenteredGrid.jsx";
+
+// Routing
+import { Route, Link } from "react-router-dom";
+import {} from "react-router-dom";
+import HomePage from "./HomePage.jsx";
+import AboutPage from "./AboutPage.jsx";
+const Index = () => <HomePage />;
+const About = () => <AboutPage />;
 
 // https://material-ui.com/demos/drawers/
 import { withStyles } from "@material-ui/core/styles";
@@ -78,6 +85,9 @@ const styles = theme => ({
       duration: theme.transitions.duration.enteringScreen
     }),
     marginLeft: 0
+  },
+  link: {
+    textDecoration: "none"
   }
 });
 
@@ -141,19 +151,22 @@ class PersistentDrawerLeft extends React.Component {
           </div>
           <Divider />
           <List>
-            <ListItem button key="Home">
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItem>
-
-            <ListItem button key="About">
-              <ListItemIcon>
-                <InfoIcon />
-              </ListItemIcon>
-              <ListItemText primary="About" />
-            </ListItem>
+            <Link to="/" className={classes.link}>
+              <ListItem button key="Home">
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <ListItemText primary="Home" />
+              </ListItem>
+            </Link>
+            <Link to="/about" className={classes.link}>
+              <ListItem button key="About">
+                <ListItemIcon>
+                  <InfoIcon />
+                </ListItemIcon>
+                <ListItemText primary="About" />
+              </ListItem>
+            </Link>
           </List>
           <Divider />
         </Drawer>
@@ -163,7 +176,8 @@ class PersistentDrawerLeft extends React.Component {
           })}
         >
           <div className={classes.drawerHeader} />
-          <CenteredGrid />
+          <Route path="/" exact component={Index} />
+          <Route path="/about" component={About} />
         </main>
       </div>
     );
