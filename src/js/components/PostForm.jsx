@@ -6,13 +6,13 @@ import { addArticle } from "../actions/index";
 
 // MUI
 import Button from "@material-ui/core/Button";
-import TextField from '@material-ui/core/TextField';
+import TextField from "@material-ui/core/TextField";
 import { Icon } from "@material-ui/core";
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography";
 const styles = {
   textField: {
-    width: 300,
-  },
+    width: 300
+  }
 };
 
 function mapDispatchToProps(dispatch) {
@@ -42,24 +42,20 @@ class ConnectedForm extends Component {
   render() {
     const { title } = this.state;
     return (
-
       <div>
-        <Typography variant="h6">
-          Add Post
-        </Typography>
+        <Typography variant="h6">Add Post</Typography>
 
-        <form onSubmit={this.handleSubmit}> 
+        <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-
             <TextField
               id="title"
-              label="Title"
+              label="Post title"
+              helperText="Forbidden: spam, money"
               style={styles.textField}
               value={title}
               onChange={this.handleChange}
               margin="normal"
             />
-
           </div>
 
           <Button variant="contained" color="primary" type="submit">
@@ -70,5 +66,8 @@ class ConnectedForm extends Component {
     );
   }
 }
-const Form = connect(null, mapDispatchToProps)(ConnectedForm);
+const Form = connect(
+  null,
+  mapDispatchToProps
+)(ConnectedForm);
 export default Form;

@@ -1,8 +1,6 @@
 import React from "react";
-import CenteredGrid from "./CenteredGrid.jsx";
+import Nav from "./Nav.jsx";
 
-const App = () => (
-  <CenteredGrid />
-);
+const App = () => <Nav />;
 
 export default App;
