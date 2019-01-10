@@ -48,14 +48,25 @@ npm start
     - The reducer calculates the next state depending on the **action type**. Moreover, it should return at least the initial state when no action type matches.
   - `Actions` and `Action creators`
     - In redux, an **action** is a simple object with a type, and a payload, e.g.
-      - `{ type: 'LIKE_POST', payload: { POST_ID: 123 }`
+      - `{ type: 'LIKE_POST', payload: { POST_ID: 123 } }`
     - An **action creator** is a function that may contain some logic, which is called by a reducer `/src/js/actions/**.js`
   - `Middleware`
     - A Redux middleware is a function that is able to intercept, and act accordingly, our actions, before they reach the reducer.
-    - Middlewares in Redux are super important because they will hold the bulk of your application’s logic. 
+    - Middlewares in Redux are super important because **they will hold the bulk of your application’s logic.** 
     The nice thing is that while inside the middleware you can access `getState` and `dispatch`
   - `react-thunk`
     - By default, we can’t use action creators for **async** tasks because they are expected to return an object (i.e. not a promise/callback function).
     - [redux-thunk](https://github.com/reduxjs/redux-thunk) middleware is used to solve this problem.
-}`
+
+**What is actually happening when I add a post?**
+- The `PostForm` component is connected to Redux
+  - It maps the `addArticle` action to the Redux `dispatch` API method and binds to the forms `onSubmit` event.
+- When you click the submit button:
+  - `onSubmit` event fired, triggers `handleSubmit`
+  - `handleSubmit` uses a local (non Redux) state to grab the post title and use to trigger the `addArticle` action in its `props`
+  - `this.props.addArticle` is mapped to Redux dispatch method so it triggers the `addArticle` action
+  - the store has been configured with `forbiddenWordsMiddleware`, so the action is processed here first.
+    - if a forbidden word is detected, adding the article is blocked and a message shown
+    - else if valid article
+      - the action passed through to the reducer, which returns a new copy of the state which contains the new article paylod (no mutation!)
 

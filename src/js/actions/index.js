@@ -1,7 +1,11 @@
-import { ADD_ARTICLE, HANDLE_BAD_WORD } from "../constants/action-types";
+import { ADD_ARTICLE, DELETE_ARTICLE, HANDLE_BAD_WORD } from "../constants/action-types";
 
 export function addArticle(payload) {
   return { type: ADD_ARTICLE, payload }
+};
+
+export function deleteArticle(payload) {
+  return { type: DELETE_ARTICLE, payload }
 };
 
 export function getData() {
