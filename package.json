@@ -12,7 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/danwild/react-redux-scaffold.git"
   },
-  "keywords": ["react", "redux", "webpack", "babel", "ES6"],
+  "keywords": [
+    "react",
+    "redux",
+    "webpack",
+    "babel",
+    "ES6"
+  ],
   "author": "mail@danwild.io",
   "license": "Apache 2.0",
   "bugs": {
@@ -36,5 +42,9 @@
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.8.2",
+    "@material-ui/icons": "^3.0.2"
   }
 }

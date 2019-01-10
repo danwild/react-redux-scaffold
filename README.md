@@ -1,11 +1,19 @@
 # react-redux-scaffold
-Adopted from: https://www.valentinog.com/blog/redux/
+A **WIP** project to learn React+Redux concepts, and setup a project scaffold.
+Lagely adopted from: https://www.valentinog.com/blog/redux/
 
 ## Install, run
 ```javascript
 npm install
 npm start
 ```
+
+## Next
+- Add some example UI components with Material UI.
+  - [Docs](https://material-ui.com/)
+  - [Tutorial](https://medium.freecodecamp.org/meet-your-material-ui-your-new-favorite-user-interface-library-6349a1c88a8c)
+  - [Icons](https://material.io/tools/icons/?style=baseline)
+- Add Routing example
 
 ## File structure:
 

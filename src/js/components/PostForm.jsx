@@ -2,7 +2,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import uuidv1 from "uuid";
-import { addArticle } from "../../actions/index";
+import { addArticle } from "../actions/index";
+
+// MUI
+import Button from "@material-ui/core/Button";
+import TextField from '@material-ui/core/TextField';
+import { Icon } from "@material-ui/core";
+import Typography from '@material-ui/core/Typography';
+const styles = {
+  textField: {
+    width: 300,
+  },
+};
+
 function mapDispatchToProps(dispatch) {
   return {
     addArticle: article => dispatch(addArticle(article))
@@ -30,21 +42,31 @@ class ConnectedForm extends Component {
   render() {
     const { title } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="title">Title</label>
-          <input
-            type="text"
-            className="form-control"
-            id="title"
-            value={title}
-            onChange={this.handleChange}
-          />
-        </div>
-        <button type="submit" className="btn btn-success btn-lg">
-          SAVE
-        </button>
-      </form>
+
+      <div>
+        <Typography variant="h6">
+          Add Post
+        </Typography>
+
+        <form onSubmit={this.handleSubmit}> 
+          <div className="form-group">
+
+            <TextField
+              id="title"
+              label="Title"
+              style={styles.textField}
+              value={title}
+              onChange={this.handleChange}
+              margin="normal"
+            />
+
+          </div>
+
+          <Button variant="contained" color="primary" type="submit">
+            Add <Icon>add</Icon>
+          </Button>
+        </form>
+      </div>
     );
   }
 }
