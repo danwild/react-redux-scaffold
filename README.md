@@ -52,7 +52,7 @@ npm start
       - `{ type: 'LIKE_POST', payload: { POST_ID: 123 } }`
     - An **action creator** is a function that may contain some logic, which is called by a reducer `/src/js/actions/**.js`
   - `Middleware`
-    - A Redux middleware is a function that is able to intercept, and act accordingly, our actions, before they reach the reducer.
+    - Redux middleware is code (a funciton) that intercepts actions coming into the store via the dispatch() method.
     - Middlewares in Redux are super important because **they will hold the bulk of your application’s logic.**
       The nice thing is that while inside the middleware you can access `getState` and `dispatch`
   - `react-thunk`
