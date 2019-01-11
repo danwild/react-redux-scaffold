@@ -25,13 +25,6 @@ npm start
   - `index.html` root html entry point
   - `index.js` root js entry point
 
-## Resources
-
-- Material UI
-  - [Docs](https://material-ui.com/)
-  - [Tutorial](https://medium.freecodecamp.org/meet-your-material-ui-your-new-favorite-user-interface-library-6349a1c88a8c)
-  - [Icons](https://material.io/tools/icons/?style=baseline)
-
 ## Oversimplified explanation of concepts
 
 - `React`
@@ -71,3 +64,10 @@ npm start
     - if a forbidden word is detected, adding the article is blocked and a message shown
     - else if valid article
       - the action passed through to the reducer, which returns a new copy of the state which contains the new article paylod (no mutation!)
+
+## Tip: use Redux DevTools
+
+- Great tool to allow you to see exactly what's happnening under the hood
+- Timetravel!
+
+![Screenshot](/screenshots/debug.png?raw=true)

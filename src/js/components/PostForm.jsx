@@ -4,17 +4,6 @@ import { connect } from "react-redux";
 import uuidv1 from "uuid";
 import { addArticle } from "../actions/index";
 
-// MUI
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import { Icon } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
-const styles = {
-  textField: {
-    width: 300
-  }
-};
-
 function mapDispatchToProps(dispatch) {
   return {
     addArticle: article => dispatch(addArticle(article))
@@ -30,37 +19,44 @@ class ConnectedForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event) {
+    console.log("handleChange", event.target.value);
+    console.log({ [event.target.id]: event.target.value });
     this.setState({ [event.target.id]: event.target.value });
   }
   handleSubmit(event) {
+    console.log("handleSubmit");
     event.preventDefault();
     const { title } = this.state;
     const id = uuidv1();
+
     this.props.addArticle({ title, id });
     this.setState({ title: "" });
   }
   render() {
     const { title } = this.state;
     return (
-      <div>
-        <Typography variant="h6">Add Post</Typography>
-
+      <div className="row">
+        <h6>Add Post</h6>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <TextField
+          <div className="input-group mb-3">
+            <input
+              type="text"
               id="title"
-              label="Post title"
-              helperText="Forbidden: spam, money"
-              style={styles.textField}
+              className="form-control"
+              placeholder="Forbidden: spam, money"
               value={title}
               onChange={this.handleChange}
-              margin="normal"
             />
+            <div className="input-group-append">
+              <button
+                className="btn btn-primary"
+                type="submit"
+                id="button-addon2"
+              >
+                Add
+              </button>
+            </div>
           </div>
-
-          <Button variant="contained" color="primary" type="submit">
-            Add <Icon>add</Icon>
-          </Button>
         </form>
       </div>
     );

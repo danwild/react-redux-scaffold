@@ -1,0 +1,30 @@
+// this is the main entrypoint sass file.
+
+@import "/node_modules/bootswatch/dist/superhero/bootstrap.css";
+
+.container {
+  h1 {
+    margin: 50px;
+  }
+
+  .row {
+    margin: 20px 0px;
+  }
+
+  h6 {
+    display: block;
+    width: 100%;
+  }
+}
+
+.my-posts {
+  .badge-pill {
+    margin-left: 10px;
+  }
+}
+
+.external-posts {
+  i.fa {
+    margin-right: 10px;
+  }
+}

@@ -1,8 +1,9 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const autoprefixer = require("autoprefixer");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: ["./src/index.js", "./src/css/app.scss"],
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist")
@@ -24,6 +25,31 @@ module.exports = {
         use: [
           {
             loader: "html-loader"
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "bundle.css"
+            }
+          },
+          { loader: "extract-loader" },
+          { loader: "css-loader" },
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: () => [autoprefixer()]
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              includePaths: ["./node_modules"]
+            }
           }
         ]
       }

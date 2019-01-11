@@ -2,19 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteArticle } from "../actions/index";
 
-// MUI
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import ListItemText from "@material-ui/core/ListItemText";
-import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import DeleteIcon from "@material-ui/icons/Delete";
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-
 const mapStateToProps = state => {
   return { articles: state.articles };
 };
@@ -40,28 +27,27 @@ class ConnectedList extends Component {
 
   render() {
     return (
-      <Grid item xs={12} md={6}>
-        <Typography variant="h6">My posts</Typography>
-        <div>
-          <List>
+      <div>
+        <div className="row my-posts">
+          <h6>My Posts</h6>
+          <ul className="list-group">
             {this.props.articles.map(el => (
-              <ListItem key={el.id}>
-                <ListItemAvatar>
-                  <Avatar>
-                    <LibraryBooks />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary={el.title} />
-                <ListItemSecondaryAction>
-                  <IconButton aria-label="Delete">
-                    <DeleteIcon onClick={() => this.handleClick(el.id)} />
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
+              <li
+                className="list-group-item d-flex justify-content-between align-items-center"
+                key={el.id}
+              >
+                {el.title}
+                <span
+                  className="badge badge-primary badge-pill"
+                  onClick={() => this.handleClick(el.id)}
+                >
+                  <i className="fa fa-trash" />
+                </span>
+              </li>
             ))}
-          </List>
+          </ul>
         </div>
-      </Grid>
+      </div>
     );
   }
 }
