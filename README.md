@@ -25,6 +25,11 @@ npm start
   - `index.html` root html entry point
   - `index.js` root js entry point
 
+## Resources
+
+- [Redux testing with Jest](https://redux.js.org/recipes/writing-tests)
+- [React Web Router](https://reacttraining.com/react-router/web/guides/quick-start)
+
 ## Oversimplified explanation of concepts
 
 - `React`
