@@ -1,0 +1,15 @@
+@import url(/node_modules/bootswatch/dist/superhero/bootstrap.css);.container h1 {
+  margin: 50px; }
+
+.container .row {
+  margin: 20px 0px; }
+
+.container h6 {
+  display: block;
+  width: 100%; }
+
+.my-posts .badge-pill {
+  margin-left: 10px; }
+
+.external-posts i.fa {
+  margin-right: 10px; }
