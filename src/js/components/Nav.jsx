@@ -14,9 +14,9 @@ class Nav extends React.Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a href="/" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             React+Redux
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,12 +30,12 @@ class Nav extends React.Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-item nav-link" href="/">
+              <Link to="/" className="nav-item nav-link">
                 Home
-              </a>
-              <a className="nav-item nav-link" href="/about">
+              </Link>
+              <Link to="/about" className="nav-item nav-link">
                 About
-              </a>
+              </Link>
             </div>
           </div>
         </nav>
